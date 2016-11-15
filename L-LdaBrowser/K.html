@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>K</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+	<script type="text/javascript">
+	  function loaded() {
+	    document.getElementById("myList").style.visibility = "hidden";
+	    document.getElementById("next").style.visibility = "hidden";
+		document.getElementById("myProgress").style.visibility = "hidden";
+		document.getElementById("download").style.visibility = "hidden";
+	  }
+	  function start() {
+	    document.getElementById("myList").style.visibility = "visible";
+	    document.getElementById("next").style.visibility = "visible";
+	    document.getElementById("myProgress").style.visibility = "visible"; 
+	    document.getElementById("start").style.visibility = "hidden";
+	  }
+	</script>
+
+	<script>
+		taskIndex = 0;
+		tPre = 0;
+		var pretime = "";
+		function time() {
+		    var d = new Date();
+		    tNow = d.getTime();
+		    pretime = d.getHours()+":"+d.getMinutes()+":"+d.getSeconds();
+		}
+
+		function saveData() {
+			// test.innerHTML = taskIndex;
+		    var table = document.getElementById("timeTable");
+		    var row = table.insertRow(0);
+		    var cell1 = row.insertCell(0);
+		    var cell2 = row.insertCell(1);
+		    // var cell3 = row.insertCell(2);
+		    cell1.innerHTML = taskIndex;
+		    if (taskIndex === 0){
+		    	cell2.innerHTML = pretime;
+		    }
+		    else{
+		    	cell2.innerHTML = tNow-tPre;
+		    }
+		    // cell3.innerHTML = tNow;
+		    tPre = tNow;
+		    taskIndex++;
+			if (taskIndex==19) 
+			{
+				// test.innerHTML = "here";
+				document.getElementById("download").style.visibility = "visible";
+				document.getElementById("next").style.visibility = "hidden";						  
+			}
+		}
+
+		function exportExcel(){
+			var html = '<meta http-equiv="content-type" content="application/vnd.ms-excel; charset=UTF-8" /><title>Excel</title>';
+		    html += '';
+		    html += document.getElementById('timeTable').outerHTML + '';
+		    window.open('data:application/vnd.ms-excel,' + encodeURIComponent(html));
+		}
+
+	</script>
+
+	<script type="text/javascript">
+		var i=0;
+		function question_change() {
+			var t = ["2. 請點擊關鍵字列表中，第五行第一項之「科學論文」",
+				  "3. 觀察首頁右側的圓餅圖，並且將滑鼠遊標移向圖表上方的主題選項",
+				  "4. 請找出「總統三連任問題／修憲／國大」的主題泡泡，找到後點擊泡泡。",
+				  "5. 觀察在此主題（總統三連任問題／修憲／國大）泡泡底下出現的關鍵字",
+				  "6. 請觀察圖表上的泡泡大小、分佈情形，並觀察哪幾個主題較為相近",
+				  "7. 請找出「外交／聯合國問題」之主題泡泡，並以滑鼠點擊查看。",
+				  "8. 請反覆點擊表格最右邊上方的〝Proportion of corpus〞", 				  
+				  "9. 請在表格右上方搜尋欄上查詢「民主」，並觀察此關鍵字出現在哪幾個主題裡面。",
+				  "10. 請找到「Topic04 法治」橫列後滑鼠點擊",
+				  "11. 請觀察左側長條圖，分別為主題底下關鍵字的比例。",
+				  "12. 請觀察右側上方柱狀圖，分別為自由中國文本裡各年代「Topic04 法治」所占的比例。",
+				  "13. 請分別點擊〝1953〞、〝1954〞、〝1955〞年之柱狀圖",
+				  "14. 請點擊〝1955〞年之柱狀圖後，點擊底下第一個比例最高的關鍵字",
+				  "15. 請觀察在文本搜尋頁查詢「中美共同防禦條約」後之文本搜尋結果。",
+				  "16. 請點擊「檢視全文」以便觀察更多文本之本文內容。",
+				  "17. 請點擊任一有興趣之主題河流進入前述已點擊過之主題專題頁面。",
+				  "18. 請將滑鼠移至各個主題底下之關鍵字，查看各關鍵字同時出現在哪些主題裡面。",
+				  "實驗結束，可以休息了。",
+				  "實驗結束，可以休息了。"];
+		    var textnode = document.createTextNode(t[i]);
+		    var item = document.getElementById("myList").childNodes[0];
+		    item.replaceChild(textnode, item.childNodes[0]);
+			i++;
+
+			//progress bar
+		    var progress = document.getElementById("myBar"); 
+		    var width = 5.5;
+		    if (i<18)
+		    {
+		    	progress.style.width = width * (i+1) + '%'; 
+		        document.getElementById("label").innerHTML = width * (i+1) + '%';
+		    }
+		    else{
+		    	progress.style.width = '99%'; 
+		        document.getElementById("label").innerHTML = '100%';
+		    }
+		}
+	</script>
+	<script type="text/javascript">
+		function centerModal() {
+		    $(this).css('display', 'block');
+		    var $dialog = $(this).find(".modal-dialog");
+		    var offset = ($(window).height() - $dialog.height()) / 2;
+		    // Center modal vertically in window
+		    $dialog.css("margin-top", offset);
+		}
+
+		$('.modal').on('show.bs.modal', centerModal);
+		$(window).on("resize", function () {
+		    $('.modal:visible').each(centerModal);
+		});
+	</script>
+
+	<script>
+		$(document).ready(function(){
+		    $('[data-toggle="tooltip"]').tooltip();
+		});
+	</script>
+
+	<script type="text/javascript">
+	var count = 0 ;
+	function changePage(){
+		count = count +1
+		console.log(count);
+		if(count==2){
+			document.getElementById("iframe").src = "http://localhost:8000/index-overview.html"; 
+		}
+	}
+	</script>
+	
+  </head>
+
+ <body onload="loaded()" scroll="no" style="overflow: hidden">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-1">
+				<p><font color="white">1119264468109716</font></p>
+			</div>
+			<div class="col-md-1">
+				<button type="button" id="start" class="btn btn-success btn-md" aria-label="Right Align" style="margin-top: 12px" data-toggle="tooltip" data-placement="bottom" title="1.用口說回答。 2.自行按下一題。 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.一直找不到答案時可以選擇放棄。 4.實驗過程不會對話。" onclick="start(); time(); saveData();">
+				  	<h3>開始作答</h3>
+				</button>
+			</div>
+
+			<div class="col-md-7" id="task" >
+				<row>
+					<div id="myList"><h3><li>閱讀完首頁左側的前置說明後，點擊該說明後的網頁連結。</li></h3></div> 
+					<!-- 題目 -->
+				</row>
+				<row>
+					<div id="myProgress">
+					  <div id="myBar">
+					    <div id="label">5.5%</div>
+					  </div>
+					</div>
+				</row>
+			</div>
+			<div class="col-md-1">
+				<button type="button" id="next" class="btn btn-warning btn-md" aria-label="Right Align" style="margin-top: 12px" onclick="question_change(); time(); saveData(); changePage();">
+				  	<h3>下一題</h3>
+				</button>
+			</div>
+			<div class="col-md-1"></div>
+			<div class="col-md-1">
+				<button type="button" id="download" class="btn btn-secondary" aria-label="Right Align" onclick="exportExcel();">
+					<h4>下載</h4>
+				</button>
+			</div>
+		</div>
+		<div class="row" style="margin-top: 5px" >
+			<iframe src="http://localhost:8000/index.html" width="100%" height="590" scrolling="no" id="iframe"></iframe>
+		</div>
+
+		<div class="row">
+			<table id="timeTable" hidden="hidden"></table>
+			<!-- <p id="test">abc</p> -->
+		</div>
+
+
+	</div>
+
+
+  </body>
+</html>
+

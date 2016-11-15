@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+		<title>L-Lda browser</title>
+		<link rel="shortcut icon" href="img/favicon.png">
+
+		<!-- Bootstrap Core CSS - Include with every page -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Bemat Admin CSS - Include with every page -->
+		<link href="css/themes/theme-default/bemat-admin.min.css" rel="stylesheet" id="theme-switcher">
+
+		<!-- Documentation Prettify -->
+		<link href="vendor/google-code-prettify/prettify-tomorrow.css" rel="stylesheet" />
+
+		<!-- Dashboard Level NVD3 Charts -->
+		<script src="vendor/d3/d3.v3.js" charset="utf-8"></script>
+		<script src="vendor/nvd3/nv.d3_2.js" type="text/javascript"></script>
+		<link href="vendor/nvd3/nv.d3_2.css" rel="stylesheet">
+
+
+
+	</head>
+	<style>
+* {
+  font-family: Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "儷黑 Pro", "LiHei Pro", "微軟正黑體", "Microsoft JhengHei", sans-serif;
+}
+
+.space {
+  letter-spacing: 2px;
+}
+table caption {
+	padding: .5em 0;
+}
+
+table.dataTable th,
+table.dataTable td {
+  white-space: nowrap;
+}
+
+.p {
+  text-align: center;
+  padding-top: 140px;
+  font-size: 14px;
+}
+.mini-card1 {
+    -webkit-flex: 0 1 auto;
+    -moz-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -ms-flex;
+    display: flex;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    align-items: center
+}
+
+a svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+</style>
+	<body class="dark-sidebar dark-header-brand container-fluid">
+		<div id="page-wrapper">
+		
+			
+			<section id="right-content">
+			<!-- 	<header class="header-container">
+					
+				</header> -->
+				<section id="right-content-wrapper">
+					<section class="page-header alternative-header">
+						<ol class="breadcrumb">
+							<li class="space">開放式數位工具平台</li>
+							<li class="space">資料視覺化專區</li>
+						</ol>
+						<div class="page-header_title">
+							<h1>
+								 Visualization for Textual Topic Models
+								<span class="page-header_subtitle">A browser displays L-LDA topic model</span>
+							</h1>
+						</div>
+					</section>
+
+					<section class="page-content">
+						  
+						<div class="row">
+                            <a href="index.html"><div class="col-lg-2 col-sm-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-body no-padding">
+                                        <div class="mini-card mini-card-default-dark">
+                                            <div class="mini-card-left">
+                                                <h2>Index</h2>
+                                            </div>
+                                            <div class="mini-card-right">
+                                                <div class="bemat-mini-chart bemat-mini-chart-default-dark">
+                                                    <span class="peity-pie">1,2,3,1</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div></a>
+							<a href="index-overview.html"><div class="col-lg-2 col-sm-6">
+								<div class="panel panel-default">
+									<div class="panel-body no-padding">
+										<div class="mini-card mini-card-primary">
+											<div class="mini-card-left">
+												<h2>Grid</h2>
+											</div>
+											<div class="mini-card-right">
+												<div class="bemat-mini-chart bemat-mini-chart-primary">
+													<span class="peity-bar">6,2,5,6,2,8,6,2,5,9</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div></a>
+
+							<a href="index-circle.html"><div class="col-lg-2 col-sm-6">
+								<div class="panel panel-default">
+									<div class="panel-body no-padding">
+										<div class="mini-card mini-card-success">
+											<div class="mini-card-left">
+												<h2>Scaled</h2>
+											</div>
+											<div class="mini-card-right">
+												<div class="bemat-mini-chart bemat-mini-chart-success">
+													<span class="peity-line">4,2,5,6,3,5,6,3,8,6</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div></a>
+
+							<a href="index-list.html"><div class="col-lg-2 col-sm-6">
+								<div class="panel panel-default">
+									<div class="panel-body no-padding">
+										<div class="mini-card mini-card-info">
+											<div class="mini-card-left">
+												<h2>List</h2>
+											</div>
+											<div class="mini-card-right">
+												<div class="bemat-mini-chart bemat-mini-chart-info">
+													<span class="peity-bar">4,3,5,2,5,3,8,3,4,9</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div></a>
+
+							<a href="index-years.html"><div class="col-lg-2 col-sm-6">
+								<div class="panel panel-default">
+									<div class="panel-body no-padding">
+										<div class="mini-card mini-card-danger">
+											<div class="mini-card-left">
+												<h2>Years</h2>
+											</div>
+											<div class="mini-card-right">
+												<div class="bemat-mini-chart bemat-mini-chart-danger">
+													<span class="peity-line">4,3,5,6,5,4,6,3,2,6</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div></a>
+
+<a href="index-word.html"><div class="col-lg-2 col-sm-6">
+    <div class="panel panel-default">
+        <div class="panel-body no-padding">
+            <div class="mini-card mini-card-warning">
+                <div class="mini-card-left">
+                    <h2>Words</h2>
+                </div>
+                <div class="mini-card-right">
+                    <div class="bemat-mini-chart bemat-mini-chart-warning">
+                        <span class="peity-bar">4,3,5,2,5,3,8,3,4,9</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></a>
+
+
+
+						</div>
+
+
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="panel panel-default">
+									<div class="panel-body">
+										<div class="">
+											<div class="row">
+												<div class="col-lg-12">
+													
+
+
+
+      <table id="tableDataTables1" class="table table-hover dt-responsive">
+        <caption class="text-center"></caption>
+        <thead>
+<tr class="info">
+    <th>Topic</th>
+    <th>1949 - 1960 &nbsp;</th>
+    <th>Top words &nbsp;</th>
+    <th>Proportion of corpus </th>
+</tr>
+</thead>
+<tbody>
+    <tr onclick="document.location = './topic.html#1';">
+        <td><strong>Topic 01 Common</strong></td>
+        <td>
+            <div class="mini-card1" style="padding:0px;margin-left:2px;">
+                <div class="bemat-mini-chart bemat-mini-chart-info">
+                    <span class="peity-bar">56.12,63.45,64.26,60.33,59.17,55.96,56.18,59.75,64.24,62.07,60.75,60.37</span>
+                </div>
+            </div>
+        </td>
+        <td>我們,一個,可以,他們,沒有,不能,這個,問題,不是,這種</td>
+        <td>
+            <svg xmlns="http://www.w3.org/2000/svg">
+                <g>
+                    <rect x="0" y="20" width="250" height="13" fill="#03a9f4"></rect>
+                    <text x="275" y="30" font-family="Verdana" font-size="14px"> 57.51% </text>
+                </g>
+            </svg>
+        </td>
+    </tr>
+    <tr onclick="document.location = './topic.html#2';">
+        <td><strong>Topic 02 刊物的立場與反省</strong></td>
+        <td>
+            <div class="mini-card1" style="padding:0px;margin-left:2px;">
+                <div class="bemat-mini-chart bemat-mini-chart-info">
+                    <span class="peity-bar">01.68,0.30,0.56,0.24,0.17,0.18,0.20,0.24,0.17,0.13,0.51,00.16</span>
+                </div>
+            </div>
+        </td>
+        <td>我們,自由,本刊,中國,這個,國家,文章,蘇俄,反共,政府</td>
+        <td>
+            <svg xmlns="http://www.w3.org/2000/svg">
+                <g>
+                    <rect x="0" y="20" width="2.9" height="13" fill="#03a9f4"></rect>
+                    <text x="65" y="30" font-family="Verdana" font-size="14px"> 0.29% </text>
+                </g>
+            </svg>
+        </td>
+    </tr>
+
+
+          <tr onclick="document.location = './topic.html#3';">
+            <td><strong>Topic 03 自由民主的基本概念</strong></td>
+            <td><div class="mini-card1" style="padding:0px;margin-left:2px;">
+                <div class="bemat-mini-chart bemat-mini-chart-info">
+                    <span class="peity-bar">10.62,05.20,03.76,01.30,02.06,02.19,01.60,02.59,01.15,01.72,02.06,01.22</span>
+                </div>
+            </div></td>
+            <td>自由,民主,國家,政治,人民,思想,社會,政府,個人,反共</td>
+            <td><svg xmlns="http://www.w3.org/2000/svg">
+                <g>
+                    <rect x="0" y="20" width="26.8" height="13" fill="#03a9f4"></rect>
+                    <text x="65" y="30" font-family="Verdana" font-size="14px"> 2.68% </text>
+                </g>
+            </svg></td>
+ 
+          </tr>
+          <tr onclick="document.location = './topic.html#4';">
+            <td><strong>Topic 04 法治</strong></td>
+            <td><div class="mini-card1" style="padding:0px;margin-left:2px;">
+                <div class="bemat-mini-chart bemat-mini-chart-info">
+                    <span class="peity-bar">00.20,0.16,0.19,0.23,0.70,0.65,0.14,0.48,0.35,0.73,0.64,00.28</span>
+                </div>
+            </div></td>
+            <td>法律,法治,人民,憲法,政府,國家,民主,總統,行政,美國</td>
+            <td><svg xmlns="http://www.w3.org/2000/svg">
+                <g>
+                    <rect x="0" y="20" width="3.5" height="13" fill="#03a9f4"></rect>
+                    <text x="65" y="30" font-family="Verdana" font-size="14px"> 0.35% </text>
+                </g>
+            </svg></td>
+ 
+          </tr>
+          <tr onclick="document.location = './topic.html#5';">
+            <td><strong>Topic 05 表現自由／出版法問題</strong></td>
+            <td><div class="mini-card1" style="padding:0px;margin-left:2px;">
+                <div class="bemat-mini-chart bemat-mini-chart-info">
+                    <span class="peity-bar">04.20,0.16,0.41,01.60,0.12,01.27,02.34,01.35,01.40,01.81,01.28,00.89</span>
+                </div>
+            </div></td>
+            <td>政府,自由,言論自由,批評,輿論,言論,報紙,臺灣,對於,國家</td>
+            <td><svg>
+                <g>
+                    <rect x="0" y="20" width="10.7" height="13" fill="#03a9f4"></rect>
+                    <text x="66" y="30" font-family="Verdana" font-size="14px"> 1.07% </text>
+                </g>
+            </svg></td>
+        </tr>
+        <tr onclick="document.location = './topic.html#6';">
+            <td><strong>Topic 06 其他基本權問題</strong></td>
+            <td><div class="mini-card1" style="padding:0px;margin-left:2px;">
+                <div class="bemat-mini-chart bemat-mini-chart-info">
+                    <span class="peity-bar">00.20,0.73,0.20,0.33,0.30,0.19,0.43,0.49,0.53,02.22,01.09,00.61</span>
+                </div>
+            </div></td>
+            <td>人民,自由,人權,國家,政府,法律,機關,規定,權利,憲法</td>
+            <td><svg>
+                <g>
+                    <rect x="0" y="20" width="6.2" height="13" fill="#03a9f4"></rect>
+                    <text x="66" y="30" font-family="Verdana" font-size="14px"> 0.62% </text>
+                </g>
+            </svg></td>
+        </tr>
+                <tr onclick="document.location = './topic.html#7';">
+            <td><strong>Topic 07 責任閣制／責任政治</strong></td>
+            <td><div class="mini-card1" style="padding:0px;margin-left:2px;">
+                <div class="bemat-mini-chart bemat-mini-chart-info">
+                    <span class="peity-bar">00.20,0.73,0.20,0.33,0.30,0.19,0.43,0.49,0.53,02.22,01.09,00.61</span>
+                </div>
+            </div></td>
+            <td>行政院,憲法,總統,立法院,行政,院長,規定,負責,政策,制度</td>
+            <td><svg>
+                <g>
+                    <rect x="0" y="20" width="5" height="13" fill="#03a9f4"></rect>
+                    <text x="66" y="30" font-family="Verdana" font-size="14px"> 0.5% </text>
+                </g>
+            </svg></td>
+        </tr>
+                <tr onclick="document.location = './topic.html#8';">
+            <td><strong>Topic 08 行政中立──國民黨退出軍警特</strong></td>
+            <td><div class="mini-card1" style="padding:0px;margin-left:2px;">
+                <div class="bemat-mini-chart bemat-mini-chart-info">
+                    <span class="peity-bar">00.20,0.20,0.14,0.13,0.12,0.13,0.34,0.55,0.23,0.23,0.63,00.39</span>
+                </div>
+            </div></td>
+            <td>國民黨,黨部,黨員,模範省,團結,政黨,黨化,以黨領軍,幹部,權責</td>
+            <td><svg>
+                <g>
+                    <rect x="0" y="20" width="1.8" height="13" fill="#03a9f4"></rect>
+                    <text x="66" y="30" font-family="Verdana" font-size="14px"> 0.18% </text>
+                </g>
+            </svg></td>
+        </tr>
+                <tr onclick="document.location = './topic.html#9';">
+            <td><strong>Topic 09 司法</strong></td>
+            <td><div class="mini-card1" style="padding:0px;margin-left:2px;">
+                <div class="bemat-mini-chart bemat-mini-chart-info">
+                    <span class="peity-bar">00.20,0.16,0.40,0.25,0.12,0.37,0.50,0.61,0.58,1.37,01.70,00.47</span>
+                </div>
+            </div></td>
+            <td>司法,法院,審判,法律,憲法,檢察官,解釋,規定,機關,行政</td>
+            <td><svg>
+                <g>
+                    <rect x="0" y="20" width="6.7" height="13" fill="#03a9f4"></rect>
+                    <text x="66" y="30" font-family="Verdana" font-size="14px"> 0.67% </text>
+                </g>
+            </svg></td>
+        </tr>
+                <tr onclick="document.location = './topic.html#10';">
+            <td><strong>Topic 10 立法院問題</strong></td>
+            <td><div class="mini-card1" style="padding:0px;margin-left:2px;">
+                <div class="bemat-mini-chart bemat-mini-chart-info">
+                    <span class="peity-bar">00.20,2.07,0.46,1.31,0.85,0.54,1.58,1.35,0.29,0.28,0.64,00.24</span>
+                </div>
+            </div></td>
+            <td>立法院,憲法,議員,議會,質詢,立法委員,規定,法律,提出,政府</td>
+            <td><svg>
+                <g>
+                    <rect x="0" y="20" width="9.2" height="13" fill="#03a9f4"></rect>
+                    <text x="66" y="30" font-family="Verdana" font-size="14px"> 0.92% </text>
+                </g>
+            </svg></td>
+        </tr>
+                <tr onclick="document.location = './topic.html#11';">
+            <td><strong>Topic 11 監察</strong></td>
+            <td><div class="mini-card1" style="padding:0px;margin-left:2px;">
+                <div class="bemat-mini-chart bemat-mini-chart-info">
+                    <span class="peity-bar">00.20,0.34,0.14,3.11,1.40,0.13,0.20,0.25,0.13,0.60,0.48,00.16</span>
+                </div>
+            </div></td>
+            <td>監察院,制度,御史,監察,政治,憲法,政府,彈劾案,彈劾,規定</td>
+            <td><svg>
+                <g>
+                    <rect x="0" y="20" width="5.5" height="13" fill="#03a9f4"></rect>
+                    <text x="66" y="30" font-family="Verdana" font-size="14px"> 0.55% </text>
+                </g>
+            </svg></td>
+        </tr>
+                <tr onclick="document.location = './topic.html#12';">
+            <td><strong>Topic 12 考試</strong></td>
+            <td><div class="mini-card1" style="padding:0px;margin-left:2px;">
+                <div class="bemat-mini-chart bemat-mini-chart-info">
+                    <span class="peity-bar">00.20,0.33,0.14,0.27,0.20,0.37,0.21,0.14,0.34,0.13,0.21,00.46</span>
+                </div>
+            </div></td>
+            <td>考試,考試院,任用,規定,人員,新法,資格,舅媽,登記,限制</td>
+            <td><svg>
+                <g>
+                    <rect x="0" y="20" width="2.2" height="13" fill="#03a9f4"></rect>
+                    <text x="66" y="30" font-family="Verdana" font-size="14px"> 0.22% </text>
+                </g>
+            </svg></td>
+        </tr>
+                <tr onclick="document.location = './topic.html#13';">
+            <td><strong>Topic 13 在野黨</strong></td>
+            <td><div class="mini-card1" style="padding:0px;margin-left:2px;">
+                <div class="bemat-mini-chart bemat-mini-chart-info">
+                    <span class="peity-bar">00.20,0.44,0.22,0.57,0.12,0.54,0.29,1.12,1.47,2.82,1.26,03.32</span>
+                </div>
+            </div></td>
+            <td>反對黨,民主,人民,政黨,政治,國家,民主政治,國民黨,政府,新黨</td>
+            <td><svg>
+                <g>
+                    <rect x="0" y="20" width="12.4" height="13" fill="#03a9f4"></rect>
+                    <text x="66" y="30" font-family="Verdana" font-size="14px"> 1.24% </text>
+                </g>
+            </svg></td>
+        </tr>
+                <tr onclick="document.location = './topic.html#14';">
+            <td><strong>Topic 14 國民黨體質改造／國民黨問題</strong></td>
+            <td><div class="mini-card1" style="padding:0px;margin-left:2px;">
+                <div class="bemat-mini-chart bemat-mini-chart-info">
+                    <span class="peity-bar">01.62,0.24,0.18,0.33,0.12,0.30,0.53,0.31,0.43,0.33,0.29,00.67</span>
+                </div>
+            </div></td>
+            <td>國民黨,革命,黨部,黨員,政治,民主,政黨,政府,反共,國家</td>
+            <td><svg>
+                <g>
+                    <rect x="0" y="20" width="3.3" height="13" fill="#03a9f4"></rect>
+                    <text x="66" y="30" font-family="Verdana" font-size="14px"> 0.33% </text>
+                </g>
+            </svg></td>
+        </tr>
+                <tr onclick="document.location = './topic.html#15';">
+            <td><strong>Topic 15 地方自治</strong></td>
+            <td><div class="mini-card1" style="padding:0px;margin-left:2px;">
+                <div class="bemat-mini-chart bemat-mini-chart-info">
+                    <span class="peity-bar">00.20,0.21,0.14,0.70,0.36,0.13,0.14,0.15,0.56,0.67,1.78,00.98</span>
+                </div>
+            </div></td>
+            <td>地方,地方自治,政府,縣市,省政府,自治,議員,臺灣,議會,規定</td>
+            <td><svg>
+                <g>
+                    <rect x="0" y="20" width="5.9" height="13" fill="#03a9f4"></rect>
+                    <text x="66" y="30" font-family="Verdana" font-size="14px"> 0.59% </text>
+                </g>
+            </svg></td>
+        </tr>
+                <tr onclick="document.location = './topic.html#16';">
+            <td><strong>Topic 16 地方選舉問題</strong></td>
+            <td><div class="mini-card1" style="padding:0px;margin-left:2px;">
+                <div class="bemat-mini-chart bemat-mini-chart-info">
+                    <span class="peity-bar">00.20,0.21,0.41,0.13,0.37,0.25,0.26,0.41,2.41,0.30,0.96,06.03</span>
+                </div>
+            </div></td>
+            <td>選舉,國民黨,候選人,投票,競選,選民,提名,地方,監察,政黨</td>
+            <td><svg>
+                <g>
+                    <rect x="0" y="20" width="11.3" height="13" fill="#03a9f4"></rect>
+                    <text x="66" y="30" font-family="Verdana" font-size="14px"> 1.13% </text>
+                </g>
+            </svg></td>
+        </tr>
+                <tr onclick="document.location = './topic.html#17';">
+            <td><strong>Topic 17 軍隊</strong></td>
+            <td><div class="mini-card1" style="padding:0px;margin-left:2px;">
+                <div class="bemat-mini-chart bemat-mini-chart-info">
+                    <span class="peity-bar">00.20,0.85,0.23,0.21,0.12,0.23,0.33,0.49,0.42,0.31,1.25,00.96</span>
+                </div>
+            </div></td>
+            <td>軍隊,軍事,政府,軍人,軍官,官兵,國家,軍中,待遇,生活</td>
+            <td><svg>
+                <g>
+                    <rect x="0" y="20" width="4.2" height="13" fill="#03a9f4"></rect>
+                    <text x="66" y="30" font-family="Verdana" font-size="14px"> 0.42% </text>
+                </g>
+            </svg></td>
+        </tr>
+                <tr onclick="document.location = './topic.html#18';">
+            <td><strong>Topic 18 教育／救國團</strong></td>
+            <td><div class="mini-card1" style="padding:0px;margin-left:2px;">
+                <div class="bemat-mini-chart bemat-mini-chart-info">
+                    <span class="peity-bar">00.20,0.41,1.26,0.95,2.12,1.14,1.10,2.58,2.50,2.67,2.35,01.55</span>
+                </div>
+            </div></td>
+            <td>教育,學生,學校,大學,校長,科學,青年,課程,學術,規定</td>
+            <td><svg>
+                <g>
+                    <rect x="0" y="20" width="16.6" height="13" fill="#03a9f4"></rect>
+                    <text x="66" y="30" font-family="Verdana" font-size="14px"> 1.66% </text>
+                </g>
+            </svg></td>
+        </tr>
+                <tr onclick="document.location = './topic.html#19';">
+            <td><strong>Topic 19 外交／聯合國問題</strong></td>
+            <td><div class="mini-card1" style="padding:0px;margin-left:2px;">
+                <div class="bemat-mini-chart bemat-mini-chart-info">
+                    <span class="peity-bar">01.04,5.44,3.36,3.41,3.12,1.81,2.88,2.68,0.58,1.94,1.14,01.80</span>
+                </div>
+            </div></td>
+            <td>美國,中國,中共,蘇俄,國家,問題,我們,聯合國,國際,政策</td>
+            <td><svg>
+                <g>
+                    <rect x="0" y="20" width="29.5" height="13" fill="#03a9f4"></rect>
+                    <text x="66" y="30" font-family="Verdana" font-size="14px"> 2.95% </text>
+                </g>
+            </svg></td>
+        </tr>
+                <tr onclick="document.location = './topic.html#20';">
+            <td><strong>Topic 20 總統三連任問題／修憲／國大</strong></td>
+            <td><div class="mini-card1" style="padding:0px;margin-left:2px;">
+                <div class="bemat-mini-chart bemat-mini-chart-info">
+                    <span class="peity-bar">00.20,0.16,0.14,0.79,2.20,0.21,0.14,0.23,0.19,0.22,1.77,04.45</span>
+                </div>
+            </div></td>
+            <td>憲法,國民大會,總統,代表,規定,修憲,蔣總統,連任,修改,臨時</td>
+            <td><svg>
+                <g>
+                    <rect x="0" y="20" width="9.3" height="13" fill="#03a9f4"></rect>
+                    <text x="66" y="30" font-family="Verdana" font-size="14px"> 0.93% </text>
+                </g>
+            </svg></td>
+        </tr>
+                <tr onclick="document.location = './topic.html#21';">
+            <td><strong>Topic 21 反共救國會議</strong></td>
+            <td><div class="mini-card1" style="padding:0px;margin-left:2px;">
+                <div class="bemat-mini-chart bemat-mini-chart-info">
+                    <span class="peity-bar">00.20,0.19,0.19,0.13,0.47,0.31,0.59,0.45,0.48,0.26,0.36,00.43</span>
+                </div>
+            </div></td>
+            <td>政府,反共,反共救國會議,會議,召開,團結,國民黨,共匪,自由,人士</td>
+            <td><svg>
+                <g>
+                    <rect x="0" y="20" width="3.5" height="13" fill="#03a9f4"></rect>
+                    <text x="66" y="30" font-family="Verdana" font-size="14px"> 0.35% </text>
+                </g>
+            </svg></td>
+        </tr>
+                <tr onclick="document.location = './topic.html#22';"> 
+            <td><strong>Topic 22 反共</strong></td>
+            <td><div class="mini-card1" style="padding:0px;margin-left:2px;">
+                <div class="bemat-mini-chart bemat-mini-chart-info">
+                    <span class="peity-bar">14.64,2.87,5.36,2.71,3.52,4.08,1.64,2.29,0.91,1.23,1.74,00.16</span>
+                </div>
+            </div></td>
+            <td>美國,蘇俄,自由,反共,國家,人民,中共,共黨,共產黨,民主</td>
+            <td><svg>
+                <g>
+                    <rect x="0" y="20" width="21.3" height="13" fill="#03a9f4"></rect>
+                    <text x="66" y="30" font-family="Verdana" font-size="14px"> 2.13% </text>
+                </g>
+            </svg></td>
+        </tr>
+                <tr onclick="document.location = './topic.html#23';">
+            <td><strong>Topic 23 經濟／財政</strong></td>
+            <td><div class="mini-card1" style="padding:0px;margin-left:2px;">
+                <div class="bemat-mini-chart bemat-mini-chart-info">
+                    <span class="peity-bar">00.24,2.76,4.61,7.84,6.83,9.03,8.57,7.14,7.44,7.61,2.26,03.48</span>
+                </div>
+            </div></td>
+            <td>經濟,增加,生產,投資,銀行,政府,工業,國家,美國,貨幣</td>
+            <td><svg>
+                <g>
+                    <rect x="0" y="20" width="75" height="13" fill="#03a9f4"></rect>
+                    <text x="105" y="30" font-family="Verdana" font-size="14px"> 7.5% </text>
+                </g>
+            </svg></td>
+        </tr>
+                <tr onclick="document.location = './topic.html#24';">
+            <td><strong>Topic 24 文藝</strong></td>
+            <td><div class="mini-card1" style="padding:0px;margin-left:2px;">
+                <div class="bemat-mini-chart bemat-mini-chart-info">
+                    <span class="peity-bar">06.81,12.65,12.90,12.97,14.81,19.32,19.68,13.76,12.56,9.99,13.93,10.65</span>
+                </div>
+            </div></td>
+            <td>一個,沒有,什麼,他們,自己,知道,我們,孩子,起來,這樣</td>
+            <td><svg>
+                <g>
+                    <rect x="0" y="20" width="152" height="13" fill="#03a9f4"></rect>
+                    <text x="182" y="30" font-family="Verdana" font-size="14px"> 15.2% </text>
+                </g>
+            </svg></td>
+        </tr>
+
+
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="5" class="text-center">click a <span class="label label-info">column</span> label to sort. click a <span class="label label-info">row</span> for more about a topic.</td>
+          </tr>
+        </tfoot>
+      </table>
+   
+
+
+
+
+
+												</div>				
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section><!-- /#page-content -->
+				</section><!-- /#right-content -->
+			</section><!-- /#right-content-wrapper -->
+		</div>
+<script type="text/javascript">
+    $('tr[data-href]').on("click", function() {
+    document.location = $(this).data('href');
+});
+</script>
+<!-- 		<script type="text/javascript">$('table').DataTable();</script> -->
+		<!-- Core Scripts - Include with every page -->
+		<script src="js/jquery-1.10.2.js" type="text/javascript"></script>
+		<script src="js/jquery-ui.custom.min.js" type="text/javascript"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="js/modernizr-2.6.2-respond-1.1.0.min.js" type="text/javascript"></script>
+
+		<!-- Page-Level Plugin Scripts - Dashboard -->
+		<script src="vendor/google-code-prettify/prettify.js" type="text/javascript"></script>
+		<script src="vendor/perfectscrollbar/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
+		<script src="vendor/iCheck/icheck.min.js" type="text/javascript"></script>
+		<script src="vendor/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
+		<script src="vendor/DataTables/js/jquery.dataTables.min.js" type="text/javascript"></script>
+		<script src="vendor/DataTables/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+		<script src="vendor/DataTables/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+		<script src="vendor/fullscreen/jquery.fullscreen-min.js" type="text/javascript"></script>
+		<script src="vendor/fullcalendar/moment.min.js" type="text/javascript"></script>
+		<script src="vendor/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
+		<script src="vendor/sparkline/jquery.sparkline.min.js" type="text/javascript"></script>
+		<script src="vendor/peity/jquery.peity.min.js" type="text/javascript"></script>
+		<script src="vendor/chartist/chartist.min.js" type="text/javascript"></script>
+		<script src="vendor/summernote/summernote.min.js" type="text/javascript"></script>
+		<script src="vendor/ckeditor/ckeditor.js" type="text/javascript"></script>
+		<script src="vendor/wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
+
+		<!-- Cerocreativo Plugins -->
+		<script src="vendor/materialRipple/jquery.materialRipple.js" type="text/javascript"></script>
+		<script src="vendor/snackbar/jquery.snackbar.js" type="text/javascript"></script>
+		<script src="vendor/toasts/jquery.toasts.js" type="text/javascript"></script>
+		<script src="vendor/speedDial/jquery.speedDial.js" type="text/javascript"></script>
+		<script src="vendor/circularProgress/jquery.circularProgress.js" type="text/javascript"></script>
+		<script src="vendor/linearProgress/jquery.linearProgress.js" type="text/javascript"></script>
+		<script src="vendor/subheader/jquery.subheader.js" type="text/javascript"></script>
+		<script src="vendor/simplePieChart/jquery.simplePieChart.js" type="text/javascript"></script>
+
+		<!-- Bemat Admin Scripts - Included with every page -->		
+		<script src="js/bemat-admin-common.min.js"></script>
+		<script src="js/bemat-admin-demo.min.js"></script> 
+
+		<script src="js/bemat-admin-demo-chartist.min.js"></script>
+		<script src="js/bemat-admin-demo-dashboard.min.js"></script>
+	</body>
+</html>

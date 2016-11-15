@@ -1,0 +1,38 @@
+[{
+  "key": "刊物的立場與反省-1949",
+  "color": "#d62728",
+  "values": [{
+    "label": "報紙",
+    "value": 23
+  }, {
+    "label": "人民",
+    "value": 42
+  }, {
+    "label": "共產主義",
+    "value": 65
+  }, {
+    "label": "結合",
+    "value": 31
+  }, {
+    "label": "民主",
+    "value": 42
+  }, {
+    "label": "政治經濟",
+    "value": 20
+  }, {
+    "label": "中華民國",
+    "value": 76
+  }, {
+    "label": "顧名",
+    "value": 80
+  }, {
+    "label": "人民政府",
+    "value": 60
+  }, {
+    "label": "顧名思義",
+    "value": 90
+  }, {
+    "label": "無政府",
+    "value": 15
+  }]
+}]

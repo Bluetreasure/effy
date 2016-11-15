@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+		<title>L-Lda browser</title>
+		<link rel="shortcut icon" href="img/favicon.png">
+
+		<!-- Bootstrap Core CSS - Include with every page -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Bemat Admin CSS - Include with every page -->
+		<link href="css/themes/theme-default/bemat-admin.min.css" rel="stylesheet" id="theme-switcher">
+
+		<!-- Documentation Prettify -->
+		<link href="vendor/google-code-prettify/prettify-tomorrow.css" rel="stylesheet" />
+
+		<!-- Dashboard Level NVD3 Charts -->
+		<script src="vendor/d3/d3.v3.js" charset="utf-8"></script>
+		<script src="vendor/nvd3/nv.d3.js" type="text/javascript"></script>
+		<link href="vendor/nvd3/nv.d3.css" rel="stylesheet">
+		<script src='vendor/nvd3/examples/cumulativeLine.js' type='text/javascript'> </script>
+		<script>
+function myFunction() {
+    document.getElementById("ss-submit").disabled = true;
+}
+</script>
+
+	</head>
+	<style>
+* {
+  font-family: "微軟正黑體", "Microsoft JhengHei", "新細明體", "PMingLiU", AppleGothic, Dotum, Lucida Grande, Verdana Sans-serif;
+}
+
+.space {
+  letter-spacing: 2px;
+}
+
+html input[disabled] {
+    cursor: not-allowed;
+}
+.btn [disabled] {
+    cursor: not-allowed;
+}
+</style>
+	<body class="dark-sidebar dark-header-brand container-fluid">
+		<div id="page-wrapper">
+		
+			
+			<section id="right-content">
+			<!-- 	<header class="header-container">
+					
+				</header> -->
+				<section id="right-content-wrapper">
+					<section class="page-header alternative-header">
+						<ol class="breadcrumb">
+							<li class="space">開放式數位工具平台</li>
+							<li class="space">資料視覺化專區</li>
+						</ol>
+						<div class="page-header_title">
+							<h1>
+								 Visualization for Textual Topic Models
+								<span class="page-header_subtitle">A browser displays L-LDA topic model</span>
+							</h1>
+						</div>
+					</section>
+
+					<section class="page-content">
+						
+						<div class="row"></div>
+
+
+						<div class="row">
+							<div class="col-lg-12 ">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<header style="margin-top:17px;">
+											<strong><span style="font-size:23px;">前導問卷－受測者基本資訊問卷</span></strong>		
+											<br><br><span style="font-size:18px;">
+											謝謝您抽空填寫問卷，請依您的瞭解填選適當答案即可。<br><br>此問卷所取得的資料，將僅用於本人碩士學位論文之用，敬請安心填寫，感激您的協助！<br><br>敬祝 &nbsp;健康順心<br><br><p>國立政治大學數位內容碩士學位學程<br><br>指導教授：陶亞倫老師、蔡銘峰老師<br><br>研究生：曾子芸</span>								
+										</header>
+										
+									</div>
+									<div class="panel-body" >
+										<div class="statistics">
+											<div class="row">
+												<div class="col-lg-12 ">
+													<!-- <div class="row">
+														<div class="col-lg-12"> -->
+<div class="ss-required-asterisk" aria-hidden="true"><span style="font-size:18px;color:red;">*</span> <span style="font-size:18px;">= 必填</span></div></div>
+<br><br>
+
+
+<div class="ss-form">
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){alert('問卷填寫完畢，十分感激您的填寫！');submitted=false}"></iframe>
+
+	<form action="https://docs.google.com/forms/d/e/1FAIpQLSd7tVC41r5tCe5hhQ1nD6_90_CHujELtMmnXDORgKDSQ7aRPg/formResponse" method="POST" id="ss-form" target="hidden_iframe" onsubmit="submitted=true;myFunction();"><ol role="list" class="ss-question-list" style="padding-left: 250;">
+
+
+<div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item ss-item-required ss-checkbox"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_2014564831"><div class="ss-q-title"><span style="font-size:18px;">請問您對「自由中國」這份文本的熟悉程度為何？（可複選）</sapn>
+<label for="itemView.getDomIdToLabel()" aria-label="(必填欄位)"></label>
+<span class="ss-required-asterisk" aria-hidden="true" style="color:red";>*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+
+
+<ul class="ss-choices ss-choices-required" role="group" aria-label="請問您對「自由中國」這份文本的熟悉程度為何？（可複選）  "><li style="list-style-type:none;" class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.1700784530" value="我完全不了解這份文本" id="group_1700784530_1" role="checkbox" class="ss-q-checkbox" aria-required="true"></span>
+<span class="ss-choice-label" style="font-size:16px;line-height:30px;">我完全不了解這份文本</span>
+</label></li> <li style="list-style-type:none;"  class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.1700784530" value="我有聽過、知道這份文本" id="group_1700784530_2" role="checkbox" class="ss-q-checkbox" aria-required="true"></span>
+<span class="ss-choice-label" style="font-size:16px;line-height:30px;">我有聽過、知道這份文本</span>
+</label></li> <li style="list-style-type:none;" class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.1700784530" value="我有閱讀過相關文獻" id="group_1700784530_3" role="checkbox" class="ss-q-checkbox" aria-required="true"></span>
+<span class="ss-choice-label" style="font-size:16px;line-height:30px;">我有閱讀過相關文獻</span>
+</label></li> <li style="list-style-type:none;" class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.1700784530" value="我有做過相關的研究" id="group_1700784530_4" role="checkbox" class="ss-q-checkbox" aria-required="true"></span>
+<span class="ss-choice-label" style="font-size:16px;line-height:30px;">我有做過相關的研究</span>
+</label></li> <li style="list-style-type:none;" class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.1700784530" value="我非常了解這份文本" id="group_1700784530_5" role="checkbox" class="ss-q-checkbox" aria-required="true"></span>
+<span class="ss-choice-label" style="font-size:16px;line-height:30px;">我非常了解這份文本</span>
+</label></li></ul>
+<div class="error-message" id="2014564831_errorMessage"></div>
+</div></div></div> <div class="ss-form-question errorbox-good" role="listitem">
+
+<br><br><br>
+<div dir="auto" class="ss-item ss-item-required ss-scale"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_2087330471"><div class="ss-q-title"><span style="font-size:18px;">是否有使用過搜尋系統搜尋電子文本的經驗？</span>
+<label for="itemView.getDomIdToLabel()" aria-label="(必填欄位)"></label>
+<span class="ss-required-asterisk" aria-hidden="true" style="color:red";>*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto">數字代表大約使用次數</div></label><br><br>
+
+
+<table width="500" border="0" cellpadding="50" cellspacing="50" id="entry_841727519"><tbody><tr aria-hidden="true"><td class="ss-scalenumbers"></td>
+<td class="ss-scalenumbers"><label class="ss-scalenumber" for="group_841727519_1">0</label></td> <td class="ss-scalenumbers"><label class="ss-scalenumber" for="group_841727519_2">1</label></td> <td class="ss-scalenumbers"><label class="ss-scalenumber" for="group_841727519_3">2</label></td> <td class="ss-scalenumbers"><label class="ss-scalenumber" for="group_841727519_4">3</label></td> <td class="ss-scalenumbers"><label class="ss-scalenumber" for="group_841727519_5">4</label></td> <td class="ss-scalenumbers"><label class="ss-scalenumber" for="group_841727519_6">5</label></td> <td class="ss-scalenumbers"><label class="ss-scalenumber" for="group_841727519_7">6</label></td> <td class="ss-scalenumbers"><label class="ss-scalenumber" for="group_841727519_8">7</label></td> <td class="ss-scalenumbers"><label class="ss-scalenumber" for="group_841727519_9">8</label></td> <td class="ss-scalenumbers"><label class="ss-scalenumber" for="group_841727519_10">9</label></td> <td class="ss-scalenumbers"><label class="ss-scalenumber" for="group_841727519_11">10</label></td>
+<td class="ss-scalenumbers"></td></tr>
+<tr role="radiogroup" aria-label="是否有使用過搜尋系統搜尋電子文本的經驗？ 數字代表使用次數 請在「0,沒有經驗,」到「10,有，約 10 次以上,」之間選擇一個值。"><td class="ss-scalerow ss-leftlabel"><div aria-hidden="true" class="aria-todo" style="font-size:16px;line-height:30px;">沒有經驗</div></td>
+<td class="ss-scalerow"><div class="ss-scalerow-fieldcell"><input type="radio" name="entry.841727519" value="0" id="group_841727519_1" role="radio" class="ss-q-radio" aria-label="0" required="" aria-required="true"></div></td> &nbsp;<td class="ss-scalerow"><div class="ss-scalerow-fieldcell"><input type="radio" name="entry.841727519" value="1" id="group_841727519_2" role="radio" class="ss-q-radio" aria-label="1" required="" aria-required="true"></div></td> &nbsp;<td class="ss-scalerow"><div class="ss-scalerow-fieldcell"><input type="radio" name="entry.841727519" value="2" id="group_841727519_3" role="radio" class="ss-q-radio" aria-label="2" required="" aria-required="true"></div></td> &nbsp;<td class="ss-scalerow"><div class="ss-scalerow-fieldcell"><input type="radio" name="entry.841727519" value="3" id="group_841727519_4" role="radio" class="ss-q-radio" aria-label="3" required="" aria-required="true"></div></td> &nbsp;<td class="ss-scalerow"><div class="ss-scalerow-fieldcell"><input type="radio" name="entry.841727519" value="4" id="group_841727519_5" role="radio" class="ss-q-radio" aria-label="4" required="" aria-required="true"></div></td> &nbsp;<td class="ss-scalerow"><div class="ss-scalerow-fieldcell"><input type="radio" name="entry.841727519" value="5" id="group_841727519_6" role="radio" class="ss-q-radio" aria-label="5" required="" aria-required="true"></div></td> <td class="ss-scalerow"><div class="ss-scalerow-fieldcell"><input type="radio" name="entry.841727519" value="6" id="group_841727519_7" role="radio" class="ss-q-radio" aria-label="6" required="" aria-required="true"></div></td> &nbsp;<td class="ss-scalerow"><div class="ss-scalerow-fieldcell"><input type="radio" name="entry.841727519" value="7" id="group_841727519_8" role="radio" class="ss-q-radio" aria-label="7" required="" aria-required="true"></div></td> &nbsp;<td class="ss-scalerow"><div class="ss-scalerow-fieldcell"><input type="radio" name="entry.841727519" value="8" id="group_841727519_9" role="radio" class="ss-q-radio" aria-label="8" required="" aria-required="true"></div></td> &nbsp;<td class="ss-scalerow"><div class="ss-scalerow-fieldcell"><input type="radio" name="entry.841727519" value="9" id="group_841727519_10" role="radio" class="ss-q-radio" aria-label="9" required="" aria-required="true"></div></td> &nbsp;<td class="ss-scalerow"><div class="ss-scalerow-fieldcell"><input type="radio" name="entry.841727519" value="10" id="group_841727519_11" role="radio" class="ss-q-radio" aria-label="10" required="" aria-required="true"></div></td>
+<td class="ss-scalerow ss-rightlabel" aria-hidden="true" style="font-size:16px;line-height:30px;"> &nbsp;&nbsp;&nbsp;有，約 10 次以上</td></tr></tbody></table>
+</div></div></div> <div class="ss-form-question errorbox-good" role="listitem">
+
+<br><br><br>
+<div dir="auto" class="ss-item ss-item-required ss-checkbox"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_424275947"><div class="ss-q-title"><span style="font-size:18px;">請問您對「主題模型」概念的熟悉程度為何？（可複選）</span>
+<label for="itemView.getDomIdToLabel()" aria-label="(必填欄位)"></label>
+<span class="ss-required-asterisk" aria-hidden="true" style="color:red";>*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+
+
+<ul class="ss-choices ss-choices-required" role="group" aria-label="請問您對「主題模型」概念的熟悉程度為何？（可複選）  "><li style="list-style-type:none;"class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.1413816909" value="我完全不了解、沒聽過主題模型" id="group_1413816909_1" role="checkbox" class="ss-q-checkbox" aria-required="true"></span>
+<span class="ss-choice-label" style="font-size:16px;line-height:30px;">我完全不了解、沒聽過主題模型</span>
+</label></li> <li style="list-style-type:none;" class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.1413816909" value="我有聽過主題模型，但不了解在闡述甚麼" id="group_1413816909_2" role="checkbox" class="ss-q-checkbox" aria-required="true"></span>
+<span class="ss-choice-label" style="font-size:16px;line-height:30px;">我有聽過主題模型，但不了解在闡述甚麼</span>
+</label></li> <li style="list-style-type:none;" class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.1413816909" value="我知道主題模型和「文字共現性」之間的關係" id="group_1413816909_3" role="checkbox" class="ss-q-checkbox" aria-required="true"></span>
+<span class="ss-choice-label" style="font-size:16px;line-height:30px;">我知道主題模型和「文字共現性」之間的關係</span>
+</label></li> <li style="list-style-type:none;" class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.1413816909" value="我有接觸過主題模型相關的研究" id="group_1413816909_4" role="checkbox" class="ss-q-checkbox" aria-required="true"></span>
+<span class="ss-choice-label" style="font-size:16px;line-height:30px;">我有接觸過主題模型相關的研究</span>
+</label></li> <li style="list-style-type:none;" class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.1413816909" value="我非常了解主題模型" id="group_1413816909_5" role="checkbox" class="ss-q-checkbox" aria-required="true"></span>
+<span class="ss-choice-label" style="font-size:16px;line-height:30px;">我非常了解主題模型</span>
+</label></li></ul>
+<div class="error-message" id="424275947_errorMessage"></div>
+</div></div></div> <div class="ss-form-question errorbox-good" role="listitem">
+
+<br><br><br>
+<div dir="auto" class="ss-item ss-item-required ss-checkbox"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_1080363740"><div class="ss-q-title"><span style="font-size:18px;">請問您對「文本的資料視覺化」概念的熟悉程度為何？（可複選）</span>
+<label for="itemView.getDomIdToLabel()" aria-label="(必填欄位)"></label>
+<span class="ss-required-asterisk" aria-hidden="true" style="color:red";>*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+
+
+<ul class="ss-choices ss-choices-required" role="group" aria-label="請問您對「文本的資料視覺化」概念的熟悉程度為何？（可複選）  "><li style="list-style-type:none;"class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.43265425" value="我完全不了解、沒聽過文本的資料視覺化" id="group_43265425_1" role="checkbox" class="ss-q-checkbox" aria-required="true"></span>
+<span class="ss-choice-label" style="font-size:16px;line-height:30px;">我完全不了解、沒聽過文本的資料視覺化</span>
+</label></li> <li style="list-style-type:none;"class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.43265425" value="我有聽過文本的資料視覺化" id="group_43265425_2" role="checkbox" class="ss-q-checkbox" aria-required="true"></span>
+<span class="ss-choice-label" style="font-size:16px;line-height:30px;">我有聽過文本的資料視覺化</span>
+</label></li> <li style="list-style-type:none;"class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.43265425" value="我知道資料視覺化，且知道在文本上的應用" id="group_43265425_3" role="checkbox" class="ss-q-checkbox" aria-required="true"></span>
+<span class="ss-choice-label" style="font-size:16px;line-height:30px;">我知道資料視覺化，且知道在文本上的應用</span>
+</label></li> <li style="list-style-type:none;"class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.43265425" value="我有接觸過文本資料視覺化相關的研究" id="group_43265425_4" role="checkbox" class="ss-q-checkbox" aria-required="true"></span>
+<span class="ss-choice-label" style="font-size:16px;line-height:30px;">我有接觸過文本資料視覺化相關的研究</span>
+</label></li> <li style="list-style-type:none;"class="ss-choice-item">
+<label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.43265425" value="我非常了解文本資料視覺化，且有實際做過" id="group_43265425_5" role="checkbox" class="ss-q-checkbox" aria-required="true"></span>
+<span class="ss-choice-label" style="font-size:16px;line-height:30px;">我非常了解文本資料視覺化，且有實際做過</span>
+</label></li></ul>
+<div class="error-message" id="1080363740_errorMessage"></div>
+</div></div></div> <div class="ss-form-question errorbox-good" role="listitem">
+
+<br><br><br>
+<div dir="auto" class="ss-item ss-item-required ss-select"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_738782687"><div class="ss-q-title"><span style="font-size:18px;">請問您的年齡大約落在？</span>
+<label for="itemView.getDomIdToLabel()" aria-label="(必填欄位)"></label>
+<span class="ss-required-asterisk" aria-hidden="true" style="color:red";>* &nbsp;</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+
+<select name="entry.738782687" id="entry_738782687" aria-label="請問您的年齡大約落在？  " aria-required="true" required=""><option value=""></option>
+<option value="１５～２０歲">１５～２０歲</option> <option value="２１～２５歲">２１～２５歲</option> <option value="２６～３０歲">２６～３０歲</option> <option value="３１～３５歲">３１～３５歲</option> <option value="３６～４０歲">３６～４０歲</option> <option value="４０歲以上">４０歲以上</option></select>
+</div></div></div> <div class="ss-form-question errorbox-good" role="listitem">
+
+<br><br><br>
+<div dir="auto" class="ss-item ss-item-required ss-date"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_1181180032"><div class="ss-q-title"><span style="font-size:18px;">問卷填寫日期</span>
+<label for="itemView.getDomIdToLabel()" aria-label="(必填欄位)"></label>
+<span class="ss-required-asterisk" aria-hidden="true" style="color:red";>* &nbsp;</span></div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+
+<input type="date" name="entry.1181180032" value="" class="ss-q-date" dir="auto" id="entry_1181180032" aria-label="問卷填寫日期  " aria-required="true" required="">
+</div></div></div> <div class="errorbox-good" role="listitem">
+<div dir="auto" class="ss-item  ss-section-header"><div class="ss-form-entry">
+<h2 class="ss-section-title"><strong>問卷到此結束，感謝您！</strong></h2>
+<div class="ss-section-description ss-no-ignore-whitespace"></div>
+</div></div></div> <div class="ss-form-question errorbox-good" role="listitem">
+<div dir="auto" class="ss-item  ss-text"><div class="ss-form-entry">
+<label class="ss-q-item-label" for="entry_1089810633"><div class="ss-q-title"><span style="font-size:18px;">謝謝您的填寫，如果您想知道本研究後續的研究成果，請填寫您的電子信箱，感謝! &nbsp;</span>
+</div>
+<div class="ss-q-help ss-secondary-text" dir="auto"></div></label>
+
+<input type="text" name="entry.1089810633" value="" class="ss-q-short" id="entry_1089810633" dir="auto" aria-label="謝謝您的填寫，如果您想知道本研究後續的研究成果，請填寫您的電子信箱，感謝!  " title="">
+<div class="error-message" id="135280584_errorMessage"></div>
+
+</div></div></div>
+<input type="hidden" name="draftResponse" value="[,,&quot;-1302570353111732759&quot;]
+">
+<input type="hidden" name="pageHistory" value="0">
+
+
+<br><br>
+<input type="hidden" name="fbzx" value="-1302570353111732759">
+<div class="ss-send-email-receipt" style="margin-bottom: 4px;" dir="ltr"><label for="emailReceipt" style="display:inline;"></label></div>
+<div class="ss-item ss-navigate"><table id="navigation-table"><tbody><tr><td class="ss-form-entry goog-inline-block" id="navigation-buttons" dir="ltr">
+<input type="submit" name="submit" value="提交" id="ss-submit"  class="btn btn-raised btn-primary">
+</td>
+</tr></tbody></table></div></ol></form></div>
+
+
+
+
+														</div>
+														
+													</div>
+												</div>
+
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+					</section><!-- /#page-content -->
+
+				</section><!-- /#right-content -->
+			</section><!-- /#right-content-wrapper -->
+
+		</div>
+
+
+		<!-- Core Scripts - Include with every page -->
+		<script src="js/jquery-1.10.2.js" type="text/javascript"></script>
+		<script src="js/jquery-ui.custom.min.js" type="text/javascript"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="js/modernizr-2.6.2-respond-1.1.0.min.js" type="text/javascript"></script>
+
+		<!-- Page-Level Plugin Scripts - Dashboard -->
+		<script src="vendor/google-code-prettify/prettify.js" type="text/javascript"></script>
+		<script src="vendor/perfectscrollbar/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
+		<script src="vendor/iCheck/icheck.min.js" type="text/javascript"></script>
+		<script src="vendor/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
+		<script src="vendor/DataTables/js/jquery.dataTables.min.js" type="text/javascript"></script>
+		<script src="vendor/DataTables/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+		<script src="vendor/DataTables/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+		<script src="vendor/fullscreen/jquery.fullscreen-min.js" type="text/javascript"></script>
+		<script src="vendor/fullcalendar/moment.min.js" type="text/javascript"></script>
+		<script src="vendor/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
+		<script src="vendor/sparkline/jquery.sparkline.min.js" type="text/javascript"></script>
+		<script src="vendor/peity/jquery.peity.min.js" type="text/javascript"></script>
+		<script src="vendor/chartist/chartist.min.js" type="text/javascript"></script>
+		<script src="vendor/summernote/summernote.min.js" type="text/javascript"></script>
+		<script src="vendor/ckeditor/ckeditor.js" type="text/javascript"></script>
+		<script src="vendor/wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
+
+		<!-- Cerocreativo Plugins -->
+		<script src="vendor/materialRipple/jquery.materialRipple.js" type="text/javascript"></script>
+		<script src="vendor/snackbar/jquery.snackbar.js" type="text/javascript"></script>
+		<script src="vendor/toasts/jquery.toasts.js" type="text/javascript"></script>
+		<script src="vendor/speedDial/jquery.speedDial.js" type="text/javascript"></script>
+		<script src="vendor/circularProgress/jquery.circularProgress.js" type="text/javascript"></script>
+		<script src="vendor/linearProgress/jquery.linearProgress.js" type="text/javascript"></script>
+		<script src="vendor/subheader/jquery.subheader.js" type="text/javascript"></script>
+		<script src="vendor/simplePieChart/jquery.simplePieChart.js" type="text/javascript"></script>
+
+		<!-- Bemat Admin Scripts - Included with every page -->		
+		<script src="js/bemat-admin-common.min.js"></script>
+		<script src="js/bemat-admin-demo.min.js"></script> 
+
+		<script src="js/bemat-admin-demo-chartist.min.js"></script>
+		<script src="js/bemat-admin-demo-dashboard.min.js"></script>
+		
+	</body>
+</html>

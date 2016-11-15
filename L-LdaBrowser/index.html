@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+		<title>L-Lda browser</title>
+		<link rel="shortcut icon" href="img/favicon.png">
+
+		<!-- Bootstrap Core CSS - Include with every page -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Bemat Admin CSS - Include with every page -->
+		<link href="css/themes/theme-default/bemat-admin.min.css" rel="stylesheet" id="theme-switcher">
+
+		<!-- Documentation Prettify -->
+		<link href="vendor/google-code-prettify/prettify-tomorrow.css" rel="stylesheet" />
+
+		<!-- Dashboard Level NVD3 Charts -->
+		<script src="vendor/d3/d3.v3.js" charset="utf-8"></script>
+		<script src="vendor/nvd3/nv.d3.js" type="text/javascript"></script>
+		<link href="vendor/nvd3/nv.d3.css" rel="stylesheet">
+		<script src='vendor/nvd3/examples/cumulativeLine.js' type='text/javascript'> </script>
+	</head>
+	<style>
+* {
+  font-family: "微軟正黑體", "Microsoft JhengHei", "新細明體", "PMingLiU", AppleGothic, Dotum, Lucida Grande, Verdana Sans-serif;
+}
+
+.space {
+  letter-spacing: 2px;
+}
+</style>
+	<body class="dark-sidebar dark-header-brand container-fluid">
+		<div id="page-wrapper">
+		
+			
+			<section id="right-content">
+			<!-- 	<header class="header-container">
+					
+				</header> -->
+				<section id="right-content-wrapper">
+					<section class="page-header alternative-header">
+						<ol class="breadcrumb">
+							<li class="space">開放式數位工具平台</li>
+							<li class="space">資料視覺化專區</li>
+						</ol>
+						<div class="page-header_title">
+							<h1>
+								 Visualization for Textual Topic Models
+								<span class="page-header_subtitle">A browser displays L-LDA topic model</span>
+							</h1>
+						</div>
+					</section>
+
+					<section class="page-content">
+						
+						<div class="row">
+							<a href="index.html"><div class="col-lg-2 col-sm-6">
+								<div class="panel panel-default">
+									<div class="panel-body no-padding">
+										<div class="mini-card mini-card-default-dark">
+											<div class="mini-card-left">
+												<h2>Index</h2>
+											</div>
+											<div class="mini-card-right">
+												<div class="bemat-mini-chart bemat-mini-chart-default-dark">
+													<span class="peity-pie">1,2,3,1</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div></a>
+
+							<a href="index-overview.html"><div class="col-lg-2 col-sm-6">
+								<div class="panel panel-default">
+									<div class="panel-body no-padding">
+										<div class="mini-card mini-card-primary">
+											<div class="mini-card-left">
+												<h2>Grid</h2>
+											</div>
+											<div class="mini-card-right">
+												<div class="bemat-mini-chart bemat-mini-chart-primary">
+													<span class="peity-bar">6,2,5,6,2,8,6,2,5,9</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div></a>
+
+							<a href="index-circle.html"><div class="col-lg-2 col-sm-6">
+								<div class="panel panel-default">
+									<div class="panel-body no-padding">
+										<div class="mini-card mini-card-success">
+											<div class="mini-card-left">
+												<h2>Scaled</h2>
+											</div>
+											<div class="mini-card-right">
+												<div class="bemat-mini-chart bemat-mini-chart-success">
+													<span class="peity-line">4,2,5,6,3,5,6,3,8,6</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div></a>
+
+							<a href="index-list.html"><div class="col-lg-2 col-sm-6">
+								<div class="panel panel-default">
+									<div class="panel-body no-padding">
+										<div class="mini-card mini-card-info">
+											<div class="mini-card-left">
+												<h2>List</h2>
+											</div>
+											<div class="mini-card-right">
+												<div class="bemat-mini-chart bemat-mini-chart-info">
+													<span class="peity-bar">4,3,5,2,5,3,8,3,4,9</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div></a>
+
+							<a href="index-years.html"><div class="col-lg-2 col-sm-6">
+								<div class="panel panel-default">
+									<div class="panel-body no-padding">
+										<div class="mini-card mini-card-danger">
+											<div class="mini-card-left">
+												<h2>Years</h2>
+											</div>
+											<div class="mini-card-right">
+												<div class="bemat-mini-chart bemat-mini-chart-danger">
+													<span class="peity-line">4,3,5,6,5,4,6,3,2,6</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div></a>
+
+<a href="index-word.html"><div class="col-lg-2 col-sm-6">
+								<div class="panel panel-default">
+									<div class="panel-body no-padding">
+										<div class="mini-card mini-card-warning">
+											<div class="mini-card-left">
+												<h2>Words</h2>
+											</div>
+											<div class="mini-card-right">
+												<div class="bemat-mini-chart bemat-mini-chart-warning">
+													<span class="peity-bar">4,3,5,2,5,3,8,3,4,9</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div></a>
+
+
+						</div>
+
+
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<header>
+											<strong>主題模型視覺化－以《自由中國》為例</strong>											
+										</header>
+
+										
+									</div>
+									<div class="panel-body">
+										<div class="statistics">
+											<div class="row">
+												<div class="col-lg-5">
+													<div class="row">
+														<div class="col-lg-12">
+															<div class="stat-wrapper" style="margin-top:7px;">
+<span class="label label-primary"> Introduction </span> These pages use the results of a computer-assisted topic modeling technique to explore <strong>《自由中國》</strong>from its first document in <br><strong>11-20-1949</strong> up until <strong>09-04-1960</strong>.
+<br><br>
+Here, we give some suggestions for exploring and interpreting the model using this website, hoping you will discover new patterns and trends yourself — and that you may find this a useful way to (re)discover aspects of the<br>《自由中國》and to open up new channels of interpretation for the field of Digital Humanities. <a target="_blank" href="https://zh.wikipedia.org/wiki/%E8%87%AA%E7%94%B1%E4%B8%AD%E5%9C%8B">詳見 &raquo;</a>
+
+<h2>About topic model</h2>
+Topic modeling is an approach from the field of machine learning which seeks to characterize a large number of documents algorithmically in terms of a smaller number of themes or word clusters (referred to as topics). The result of applying the algorithm is a model: deliberately simplifying the documents, it attempts to describe their interconnections concisely and cogently. <a target="_blank" href="https://zh.wikipedia.org/wiki/%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B">詳見 &raquo;</a>
+
+
+<h2>Contents</h2><a href="#" data-toggle="tooltip" data-placement="right" title="主題／主題代表字總覽">Topic Overview</a><br><a href="#" data-toggle="tooltip" data-placement="right" title="主題遠近分布泡泡圖">Topic Bubble Chart</a><br><a href="#" data-toggle="tooltip" data-placement="right" title="主題列表顯示">Topic List</a><br><a href="#" data-toggle="tooltip" data-placement="right" title="主題年代趨勢河流圖">Stream Graph of Topics over Year</a><br><a href="#" data-toggle="tooltip" data-placement="right" title="文字索引">Term Index</a>
+
+															</div>
+														</div>
+														
+													</div>
+												</div>
+												<div class="col-lg-7">
+													<div class="row">
+														<div class="col-lg-12">
+															<div id="chart" style="margin:0px;padding:0px;">
+																<svg class="height-5 width-5"></svg>
+															</div>
+															<span style = "margin-left:180px">※ 可點選上方主題圓點以顯示／隱藏標題</span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<!-- <div class="col-lg-3 col-sm-6">
+													<div class="micro-stats layout layout-row layout-align-center margin-top-3">
+														<div class="micro-chart-1" data-toggle="simple-pie-chart" data-percent="52" data-type="danger" data-size="45" data-line-width="3"></div>
+														<div class="micro-stats_title flex padding-horizontal-2">Server Load</div>
+														<div class="micro-stats_icons"><span class="label label-danger"><i class="material-icons">trending_up</i></span></div>
+													</div>
+												</div> -->
+												<div class="col-lg-3 col-sm-6">
+													<!-- <div class="micro-stats layout layout-row layout-align-center margin-top-3">
+														<div class="micro-chart-1" data-toggle="simple-pie-chart" data-percent="87" data-type="warning" data-size="45" data-line-width="3"></div>
+														<div class="micro-stats_title flex padding-horizontal-2">Disk Space</div>
+														<div class="micro-stats_icons"><span class="label label-warning"><i class="material-icons">report_problem</i></span></div>
+													</div> -->
+												</div>
+												<div class="col-lg-3 col-sm-6">
+													<!-- <div class="micro-stats layout layout-row layout-align-center margin-top-3">
+														<div class="micro-chart-1" data-toggle="simple-pie-chart" data-percent="25" data-type="success" data-size="45" data-line-width="3"></div>
+														<div class="micro-stats_title flex padding-horizontal-2">Bandwidth</div>
+														<div class="micro-stats_icons"><span class="label label-success"><i class="material-icons">trending_down</i></span></div>
+													</div> -->
+												</div>
+												<div class="col-lg-3 col-sm-6">
+													<!-- <div class="micro-stats layout layout-row layout-align-center margin-top-3">
+														<div class="micro-chart-1" data-toggle="simple-pie-chart" data-percent="57" data-type="primary" data-size="45" data-line-width="3"></div>
+														<div class="micro-stats_title flex padding-horizontal-2">Traffic</div>
+														<div class="micro-stats_icons"><span class="label label-primary"><i class="material-icons">trending_up</i></span></div>
+													</div> -->
+												</div>												
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						
+
+						<!-- <div class="row">
+							<div class="col-lg-6">
+								<div class="panel panel-default panel-divider">
+									<div class="panel-heading">
+										<header>Your Task List</header>
+
+										<div class="panel-heading-tools">
+											<div class="btn-group">
+												<a class="btn btn-icon-toggle panel-tools-menu dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+												<ul class="dropdown-menu dropdown-menu-right">
+													<li><a href="#">Refresh</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="panel-body no-padding">
+										<div class="tasks-list" data-toggle="subheader" data-class="height-5">
+											<section>
+												<div class="list-subheader" data-mode="sticky">To Do Tasks</div>
+												<ul class="list">
+													<li class="list-item list-1-line">
+														<div class="list-icon">
+															<input class="checkbox checkbox-primary" type="checkbox" />
+														</div>
+														<div class="list-item-text layout-column">
+															<h3>Release Bemat Admin v1</h3>
+														</div>
+														<button type="button" class="secondary-container btn btn-default btn-icon-toggle" data-toggle="tooltip" data-placement="left" title="Delete Task"><i class="material-icons">delete</i></button>
+													</li>
+													<li class="list-item list-1-line">
+														<div class="list-icon">
+															<input class="checkbox checkbox-primary" type="checkbox" />
+														</div>
+														<div class="list-item-text layout-column">
+															<h3>Confirm Updates with David</h3>
+														</div>
+														<button type="button" class="secondary-container btn btn-default btn-icon-toggle" data-toggle="tooltip" data-placement="left" title="Delete Task"><i class="material-icons">delete</i></button>
+													</li>
+													<li class="list-item list-1-line">
+														<div class="list-icon">
+															<input class="checkbox checkbox-primary" type="checkbox" />
+														</div>
+														<div class="list-item-text layout-column">
+															<h3>Make daily backup</h3>
+														</div>
+														<button type="button" class="secondary-container btn btn-default btn-icon-toggle" data-toggle="tooltip" data-placement="left" title="Delete Task"><i class="material-icons">delete</i></button>
+													</li>
+													<li class="list-item list-1-line">
+														<div class="list-icon">
+															<input class="checkbox checkbox-primary" type="checkbox" />
+														</div>
+														<div class="list-item-text layout-column">
+															<h3>Buy bread and butter</h3>
+														</div>
+														<button type="button" class="secondary-container btn btn-default btn-icon-toggle" data-toggle="tooltip" data-placement="left" title="Delete Task"><i class="material-icons">delete</i></button>
+													</li>
+												</ul>
+											</section>	
+											<section>
+												<div class="list-subheader" data-mode="sticky">Completed Tasks</div>
+												<ul class="list">
+													<li class="list-item list-1-line">
+														<div class="list-icon">
+															<input class="checkbox checkbox-primary" type="checkbox" />
+														</div>
+														<div class="list-item-text layout-column">
+															<h3>Release Bemat Admin v1</h3>
+														</div>
+														<button type="button" class="secondary-container btn btn-default btn-icon-toggle" data-toggle="tooltip" data-placement="left" title="Archive Task"><i class="material-icons">archive</i></button>
+													</li>
+													<li class="list-item list-1-line">
+														<div class="list-icon">
+															<input class="checkbox checkbox-primary" type="checkbox" />
+														</div>
+														<div class="list-item-text layout-column">
+															<h3>Confirm Updates with David</h3>
+														</div>
+														<button type="button" class="secondary-container btn btn-default btn-icon-toggle" data-toggle="tooltip" data-placement="left" title="Archive Task"><i class="material-icons">archive</i></button>
+													</li>
+													<li class="list-item list-1-line">
+														<div class="list-icon">
+															<input class="checkbox checkbox-primary" type="checkbox" />
+														</div>
+														<div class="list-item-text layout-column">
+															<h3>Make daily backup</h3>
+														</div>
+														<button type="button" class="secondary-container btn btn-default btn-icon-toggle" data-toggle="tooltip" data-placement="left" title="Archive Task"><i class="material-icons">archive</i></button>
+													</li>
+													<li class="list-item list-1-line">
+														<div class="list-icon">
+															<input class="checkbox checkbox-primary" type="checkbox" />
+														</div>
+														<div class="list-item-text layout-column">
+															<h3>Buy bread and butter</h3>
+														</div>
+														<button type="button" class="secondary-container btn btn-default btn-icon-toggle" data-toggle="tooltip" data-placement="left" title="Archive Task"><i class="material-icons">archive</i></button>
+													</li>
+													<li class="list-item list-1-line">
+														<div class="list-icon">
+															<input class="checkbox checkbox-primary" type="checkbox" />
+														</div>
+														<div class="list-item-text layout-column">
+															<h3>Buy bread and butter</h3>
+														</div>
+														<button type="button" class="secondary-container btn btn-default btn-icon-toggle" data-toggle="tooltip" data-placement="left" title="Archive Task"><i class="material-icons">archive</i></button>
+													</li>
+												</ul>
+											</section>	
+										</div>
+									</div>
+								</div>
+							</div>
+
+							
+						</div> -->
+
+
+					</section><!-- /#page-content -->
+
+				</section><!-- /#right-content -->
+			</section><!-- /#right-content-wrapper -->
+
+		</div>
+
+
+		<!-- Core Scripts - Include with every page -->
+		<script src="js/jquery-1.10.2.js" type="text/javascript"></script>
+		<script src="js/jquery-ui.custom.min.js" type="text/javascript"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="js/modernizr-2.6.2-respond-1.1.0.min.js" type="text/javascript"></script>
+
+		<!-- Page-Level Plugin Scripts - Dashboard -->
+		<script src="vendor/google-code-prettify/prettify.js" type="text/javascript"></script>
+		<script src="vendor/perfectscrollbar/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
+		<script src="vendor/iCheck/icheck.min.js" type="text/javascript"></script>
+		<script src="vendor/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
+		<script src="vendor/DataTables/js/jquery.dataTables.min.js" type="text/javascript"></script>
+		<script src="vendor/DataTables/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+		<script src="vendor/DataTables/js/dataTables.bootstrap.min.js" type="text/javascript"></script>
+		<script src="vendor/fullscreen/jquery.fullscreen-min.js" type="text/javascript"></script>
+		<script src="vendor/fullcalendar/moment.min.js" type="text/javascript"></script>
+		<script src="vendor/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
+		<script src="vendor/sparkline/jquery.sparkline.min.js" type="text/javascript"></script>
+		<script src="vendor/peity/jquery.peity.min.js" type="text/javascript"></script>
+		<script src="vendor/chartist/chartist.min.js" type="text/javascript"></script>
+		<script src="vendor/summernote/summernote.min.js" type="text/javascript"></script>
+		<script src="vendor/ckeditor/ckeditor.js" type="text/javascript"></script>
+		<script src="vendor/wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
+
+		<!-- Cerocreativo Plugins -->
+		<script src="vendor/materialRipple/jquery.materialRipple.js" type="text/javascript"></script>
+		<script src="vendor/snackbar/jquery.snackbar.js" type="text/javascript"></script>
+		<script src="vendor/toasts/jquery.toasts.js" type="text/javascript"></script>
+		<script src="vendor/speedDial/jquery.speedDial.js" type="text/javascript"></script>
+		<script src="vendor/circularProgress/jquery.circularProgress.js" type="text/javascript"></script>
+		<script src="vendor/linearProgress/jquery.linearProgress.js" type="text/javascript"></script>
+		<script src="vendor/subheader/jquery.subheader.js" type="text/javascript"></script>
+		<script src="vendor/simplePieChart/jquery.simplePieChart.js" type="text/javascript"></script>
+
+		<!-- Bemat Admin Scripts - Included with every page -->		
+		<script src="js/bemat-admin-common.min.js"></script>
+		<script src="js/bemat-admin-demo.min.js"></script> 
+
+		<script src="js/bemat-admin-demo-chartist.min.js"></script>
+		<script src="js/bemat-admin-demo-dashboard.min.js"></script>
+	</body>
+</html>
