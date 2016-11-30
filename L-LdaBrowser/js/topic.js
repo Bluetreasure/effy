@@ -4,12 +4,15 @@ var title_name = ['Common','刊物的立場與反省','自由民主的基本概�
                       '教育／救國團','外交／聯合國問題','總統三連任問題／修憲／國大','反共救國會議',
                       '反共','經濟／財政','文藝'];
 //判斷網頁的參數#1/#2/#3 代表Topic的id
+
 var topicid = parseInt(location.hash.slice(1,location.hash.length));
-var headerstr = "Topic"+topicid+" <strong>"+title_name[topicid-1]+"</strong>";
+var headerstr = "Topic"+(topicid-1)+" <strong>"+title_name[topicid-1]+"</strong>";
 document.getElementById("head").innerHTML = headerstr;
 
 var lamData ;
 var dat2;
+
+setTimeout('',20000);
 
 d3.json("data/twords.json",function(error,data){
 	lamData =  [];
@@ -22,7 +25,7 @@ d3.json("data/twords.json",function(error,data){
 	}
 	var dat2 = lamData.filter(function(d){
 		//console.log(d);
-		return d.topics == "Topic"+topicid;
+		return d.topics == "Topic"+(topicid+1);
 	})
 	var i = 1 
 	var str = ""
@@ -41,7 +44,7 @@ d3.json("data/twords.json",function(error,data){
 		}
 		
 	});
-	console.log(str);
+	//console.log(str);
 });
 
 //原本的Bar Chart

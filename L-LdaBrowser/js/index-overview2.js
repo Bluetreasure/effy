@@ -108,7 +108,7 @@ LDAvis = function(to_select, json_file) {
 
         // a (K x 5) matrix with columns x, y, topics, Freq, cluster (where x and y are locations for left panel)
         mdsData = [];
-        for (var i = 0; i < K; i++) {
+        for (var i = 1; i < K; i++) {
             var obj = {};
             for (var key in data['mdsDat']) {
                 obj[key] = data['mdsDat'][key][i];
@@ -138,6 +138,7 @@ LDAvis = function(to_select, json_file) {
             }
             lamData.push(obj);
         }
+        console.log(lamData);
 
         // Create the topic input & lambda slider forms. Inspired from:
         // http://bl.ocks.org/d3noob/10632804

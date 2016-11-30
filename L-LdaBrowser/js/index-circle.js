@@ -114,13 +114,14 @@ LDAvis = function(to_select, json_file) {
 
         // a (K x 5) matrix with columns x, y, topics, Freq, cluster (where x and y are locations for left panel)
         mdsData = [];
-        for (var i = 0; i < K; i++) {
+        for (var i = 1; i < K; i++) {
             var obj = {};
             for (var key in data['mdsDat']) {
                 obj[key] = data['mdsDat'][key][i];
             }
             mdsData.push(obj);
         }
+        console.log(mdsData);
 
         // a huge matrix with 3 columns: Term, Topic, Freq, where Freq is all non-zero probabilities of topics given terms
         // for the terms that appear in the barcharts for this data

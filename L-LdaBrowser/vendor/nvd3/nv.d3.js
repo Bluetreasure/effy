@@ -4919,7 +4919,16 @@ nv.models.indentedTree = function() {
           .attr('text-anchor', 'start')
           .attr('class','nv-legend-text')
           .attr('dy', '.32em')
-          .attr('dx', '8');
+          .attr('dx', '8')
+          .on("click",function(){
+            if(this.style.textDecoration === 'line-through')
+            {
+              this.style.textDecoration = '';
+            }
+            else{
+              this.style.textDecoration='line-through';
+            }
+            });
       series.classed('disabled', function(d) { return d.disabled });
       series.exit().remove();
       series.select('circle')
